@@ -1,0 +1,241 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://fonts/darkforest.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://menu.gd" type="Script" id=2]
+[ext_resource path="res://tux/tux.png" type="Texture" id=3]
+[ext_resource path="res://audio/music/menu/Funicul Funicul 8 bit version-uAqv-rxGFO8.wav" type="AudioStream" id=4]
+[ext_resource path="res://tux/pizza.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 128
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 64
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="Theme" id=8]
+default_font = SubResource( 2 )
+Button/colors/font_color = Color( 0.345098, 0.345098, 0.345098, 0.529412 )
+Button/colors/font_color_disabled = Color( 0.345098, 0.345098, 0.345098, 0.0980392 )
+Button/colors/font_color_hover = Color( 0.345098, 0.345098, 0.345098, 1 )
+Button/colors/font_color_pressed = Color( 0.345098, 0.345098, 0.345098, 0.529412 )
+Button/constants/hseparation = 2
+Button/fonts/font = SubResource( 2 )
+Button/styles/disabled = SubResource( 3 )
+Button/styles/focus = SubResource( 4 )
+Button/styles/hover = SubResource( 5 )
+Button/styles/normal = SubResource( 6 )
+Button/styles/pressed = SubResource( 7 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 80
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="DynamicFont" id=11]
+size = 25
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 25
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=13]
+length = 1.096
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.4, 0.5, 0.6, 0.7, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0, 4 ), Vector2( 1, 4 ), Vector2( 0, 4 ), Vector2( 1, 4 ), Vector2( 0, 4 ), Vector2( 1, 4 ), Vector2( 0, 4 ), Vector2( 1, 4 ), Vector2( 0, 4 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.548, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("pizza:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.55 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("pizza:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 11, -10 ), Vector2( 9, -12 ), Vector2( 11, -10 ), Vector2( -11, -10 ), Vector2( -9, -10 ), Vector2( -11, -10 ), Vector2( 9, -12 ), Vector2( 11, -10 ), Vector2( -11, -10 ), Vector2( -9, -10 ), Vector2( -11, -10 ) ]
+}
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 2.0
+margin_bottom = 2.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+color = Color( 0.960784, 1, 0.909804, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -557.0
+margin_top = 100.0
+margin_right = 557.0
+margin_bottom = 128.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.345098, 0.345098, 0.345098, 1 )
+text = "Tux vs Bo-oh-o-Wa-er"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -75.5
+margin_top = -82.0
+margin_right = 75.5
+margin_bottom = 82.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="Button" parent="VBoxContainer"]
+margin_right = 151.0
+margin_bottom = 80.0
+focus_neighbour_top = NodePath("../../Control/Credits")
+theme = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0.345098, 0.345098, 0.345098, 0.529412 )
+custom_colors/font_color_hover = Color( 0.345098, 0.345098, 0.345098, 1 )
+text = "Play"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+margin_top = 84.0
+margin_right = 151.0
+margin_bottom = 164.0
+focus_neighbour_bottom = NodePath("../../Control/Credits")
+theme = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0.345098, 0.345098, 0.345098, 0.529412 )
+custom_colors/font_color_hover = Color( 0.345098, 0.345098, 0.345098, 1 )
+text = "Quit"
+
+[node name="Control" type="Control" parent="."]
+margin_top = 947.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits" type="LinkButton" parent="Control"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = -54.0
+margin_right = 276.0
+focus_neighbour_bottom = NodePath("../../VBoxContainer/Play")
+focus_mode = 2
+custom_styles/focus = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
+custom_colors/font_color = Color( 0.345098, 0.345098, 0.345098, 0.529412 )
+custom_colors/font_color_hover = Color( 0.345098, 0.345098, 0.345098, 1 )
+custom_constants/underline_spacing = 4
+action_mode = 0
+text = "By Il Mastro Stefanuzzo"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/Credits"]
+
+[node name="Playing" type="Label" parent="Control"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -343.0
+margin_top = -46.0
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0.345098, 0.345098, 0.345098, 0.529412 )
+text = "Playing Funculuì Funiculà 8-bit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TuxPizza" type="Sprite" parent="."]
+position = Vector2( 1748, 951 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 3 )
+flip_h = true
+hframes = 8
+vframes = 9
+frame = 32
+
+[node name="pizza" type="Sprite" parent="TuxPizza"]
+position = Vector2( -10.6325, -10 )
+rotation = 3.63712
+scale = Vector2( 0.40625, 0.40625 )
+texture = ExtResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TuxPizza"]
+autoplay = "pizza"
+anims/pizza = SubResource( 13 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="Control/Credits" to="." method="_on_Credits2_pressed"]

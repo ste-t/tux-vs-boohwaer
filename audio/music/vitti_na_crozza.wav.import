@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/vitti_na_crozza.wav-88c0a945e7197330efda63601ff7fa9b.sample"
+
+[deps]
+
+source_file="res://audio/music/vitti_na_crozza.wav"
+dest_files=[ "res://.import/vitti_na_crozza.wav-88c0a945e7197330efda63601ff7fa9b.sample" ]
+
+[params]
+
+force/8_bit=true
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0
