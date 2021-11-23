@@ -1,4 +1,4 @@
-<img width="128" height="128" alt="Game icon" src="icon.png">
+[<img width="128" height="128" alt="Game icon" src="icon.png">](https://itch.io/jam/seajam/rate/1286982)
 
 # Tux vs Bo'oh'Wa'er
 A simple game for the [TeamSeas Game Jam](https://itch.io/jam/seajam).
