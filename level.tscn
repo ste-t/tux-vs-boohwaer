@@ -134,7 +134,6 @@ jump_times_to_descend = [ 0.5, 0.35, 0.25, 0.2 ]
 
 [node name="MovingStuff" type="Node2D" parent="."]
 script = ExtResource( 6 )
-speeds = [ 600.0, 750.0, 900.0, 1200.0 ]
 
 [node name="Objects" type="Node2D" parent="MovingStuff"]
 position = Vector2( 0, 768 )

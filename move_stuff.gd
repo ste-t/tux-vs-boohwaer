@@ -1,6 +1,6 @@
 extends Node2D
 
-export var speeds := [600.0, 1200.0]
+export var speeds := [600.0, 750.0, 900.0, 1200.0]
 var speed : float = speeds[0]
 
 var speed_phase : int = 0
@@ -10,8 +10,7 @@ func _process(delta: float) -> void:
 	and owner.get_node("Tux (RigidBody2D)").is_grounded():
 		speed_up()
 
-	for i in $Objects.get_children():
-		i.position.x -= speed * delta
+	$Objects.position.x -= speed * delta
 
 
 func _on_Timer_timeout() -> void:

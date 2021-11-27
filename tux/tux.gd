@@ -4,12 +4,6 @@ var velocity := Vector2.ZERO
 var max_height : float = 743.4
 var min_height : float = 80
 
-#export var jump_height : float = 260
-#export var jump_height1 : float = 600  # Speed 2
-#export var jump_time_to_peak : float = 0.3
-#export var jump_time_to_descend : float = 0.5
-#export var jump_time_to_descend1 : float = 0.2  # Speed 2
-
 export var jump_heights := [260.0, 600]
 export var jump_times_to_peak := [0.3, 0.3]
 export var jump_times_to_descend := [0.5, 0.2]
