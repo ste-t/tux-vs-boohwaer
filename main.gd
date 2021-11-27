@@ -17,6 +17,9 @@ var random_pos = RandomNumberGenerator.new()
 var random_object = RandomNumberGenerator.new()
 
 func _ready() -> void:
+	if !(OS.get_name() == "Android" || OS.get_name() == "iOS"):
+		$GUI/Top/Hints/HBoxContainder/AnimationPlayer.play("fadeout")
+
 	random_pos.randomize()
 	random_object.randomize()
 
@@ -93,3 +96,11 @@ func _on_Credits_pressed() -> void:
 
 func _on_LinkButton_pressed() -> void:
 	restart()
+
+
+func _on_RestartTouch_pressed() -> void:
+	restart()
+
+func _on_MenuTouch_pressed() -> void:
+	get_tree().change_scene("res://menu.tscn")
+	get_tree().paused = false	

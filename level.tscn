@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://tux/tux.tscn" type="PackedScene" id=1]
 [ext_resource path="res://enviorment/default/default.tscn" type="PackedScene" id=2]
@@ -44,19 +44,19 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="DynamicFont" id=7]
-size = 128
-font_data = ExtResource( 4 )
+[sub_resource type="StyleBoxEmpty" id=7]
 
 [sub_resource type="DynamicFont" id=8]
 size = 128
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="DynamicFont" id=10]
 size = 25
 font_data = ExtResource( 4 )
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=11]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
@@ -82,11 +82,11 @@ tracks/1/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=12]
 size = 64
 font_data = ExtResource( 4 )
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=13]
 length = 4.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
@@ -129,8 +129,6 @@ __meta__ = {
 position = Vector2( 196.5, 753.4 )
 z_index = 5
 jump_heights = [ 260.0, 400, 430.0, 600.0 ]
-jump_times_to_peak = [ 0.3, 0.3, 0.3, 0.3 ]
-jump_times_to_descend = [ 0.5, 0.35, 0.25, 0.2 ]
 
 [node name="MovingStuff" type="Node2D" parent="."]
 script = ExtResource( 6 )
@@ -221,7 +219,13 @@ custom_colors/font_color = Color( 0.345098, 0.345098, 0.345098, 0.529412 )
 text = "Quick Restart
 (Ctrl E)"
 align = 1
-script = ExtResource( 5 )
+
+[node name="RestartTouch" type="LinkButton" parent="GUI/Top/Hints/HBoxContainder/CtrlR"]
+margin_right = 171.0
+margin_bottom = 58.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="VSeparator" type="VSeparator" parent="GUI/Top/Hints/HBoxContainder"]
 margin_left = 957.0
@@ -239,10 +243,15 @@ custom_colors/font_color = Color( 0.345098, 0.345098, 0.345098, 0.529412 )
 text = "Main Menu
 (ESC)"
 align = 1
-script = ExtResource( 5 )
+
+[node name="MenuTouch" type="LinkButton" parent="GUI/Top/Hints/HBoxContainder/Esc"]
+margin_right = 117.0
+margin_bottom = 58.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="GUI/Top/Hints/HBoxContainder"]
-autoplay = "fadeout"
 anims/fadeout = SubResource( 6 )
 
 [node name="DeathMenu" type="MarginContainer" parent="GUI"]
@@ -250,25 +259,26 @@ visible = false
 anchor_left = 24.0
 anchor_right = 24.0
 margin_left = -960.0
+margin_top = 110.0
 margin_right = 960.0
-margin_bottom = 884.0
+margin_bottom = 774.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Retry" type="Label" parent="GUI/DeathMenu"]
-margin_top = 378.0
+[node name="Control" type="Control" parent="GUI/DeathMenu"]
 margin_right = 1920.0
-margin_bottom = 506.0
-custom_fonts/font = SubResource( 7 )
-custom_colors/font_color = Color( 0.345098, 0.345098, 0.345098, 0 )
-align = 1
-valign = 1
+margin_bottom = 664.0
 
-[node name="LinkButton" type="LinkButton" parent="GUI/DeathMenu/Retry"]
+[node name="Retry" type="LinkButton" parent="GUI/DeathMenu/Control"]
 margin_left = 803.0
-margin_right = 1108.0
-margin_bottom = 128.0
+margin_top = 268.0
+margin_right = 2723.0
+margin_bottom = 932.0
+focus_neighbour_top = NodePath("../Credits")
+focus_neighbour_bottom = NodePath("../Credits")
+focus_mode = 2
+custom_styles/focus = SubResource( 7 )
 custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0.345098, 0.345098, 0.345098, 0.529412 )
 custom_colors/font_color_hover = Color( 0.345098, 0.345098, 0.345098, 1 )
@@ -279,12 +289,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Credits" type="LinkButton" parent="GUI/DeathMenu/Retry"]
+[node name="Credits" type="LinkButton" parent="GUI/DeathMenu/Control"]
 margin_left = 832.0
-margin_top = 102.0
-margin_right = 1091.0
-margin_bottom = 136.0
-custom_fonts/font = SubResource( 9 )
+margin_top = 370.0
+margin_right = 2752.0
+margin_bottom = 396.0
+focus_neighbour_top = NodePath("../Retry")
+focus_neighbour_bottom = NodePath("../Retry")
+focus_mode = 2
+custom_styles/focus = SubResource( 9 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0.345098, 0.345098, 0.345098, 0.529412 )
 custom_colors/font_color_hover = Color( 0.345098, 0.345098, 0.345098, 1 )
 custom_constants/underline_spacing = 4
@@ -295,7 +309,7 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="GUI/DeathMenu"]
-anims/fadein = SubResource( 10 )
+anims/fadein = SubResource( 11 )
 
 [node name="HatHint" type="MarginContainer" parent="GUI"]
 visible = false
@@ -310,7 +324,7 @@ __meta__ = {
 margin_top = 343.0
 margin_right = 1880.0
 margin_bottom = 541.0
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
 custom_colors/font_color = Color( 0.345098, 0.345098, 0.345098, 0.529412 )
 text = "Press SPACE
 to stop flying
@@ -318,7 +332,7 @@ before timeout"
 valign = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="GUI/HatHint"]
-anims/fadeinout = SubResource( 12 )
+anims/fadeinout = SubResource( 13 )
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
@@ -328,5 +342,7 @@ autoplay = true
 [connection signal="timeout" from="Timer" to="Tux (RigidBody2D)" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer" to="MovingStuff" method="_on_Timer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="GUI/Top/VBoxContainer/HBoxContainer/Score" method="_on_ScoreTimer_timeout"]
-[connection signal="pressed" from="GUI/DeathMenu/Retry/LinkButton" to="." method="_on_LinkButton_pressed"]
-[connection signal="pressed" from="GUI/DeathMenu/Retry/Credits" to="." method="_on_Credits_pressed"]
+[connection signal="pressed" from="GUI/Top/Hints/HBoxContainder/CtrlR/RestartTouch" to="." method="_on_RestartTouch_pressed"]
+[connection signal="pressed" from="GUI/Top/Hints/HBoxContainder/Esc/MenuTouch" to="." method="_on_MenuTouch_pressed"]
+[connection signal="pressed" from="GUI/DeathMenu/Control/Retry" to="." method="_on_LinkButton_pressed"]
+[connection signal="pressed" from="GUI/DeathMenu/Control/Credits" to="." method="_on_Credits_pressed"]

@@ -2,11 +2,11 @@ extends KinematicBody2D
 
 var velocity := Vector2.ZERO
 var max_height : float = 743.4
-var min_height : float = 80
+var min_height : float = 80.0
 
-export var jump_heights := [260.0, 600]
-export var jump_times_to_peak := [0.3, 0.3]
-export var jump_times_to_descend := [0.5, 0.2]
+export var jump_heights := [260.0, 400.0, 430.0, 600.0]
+export var jump_times_to_peak := [0.3, 0.3, 0.3, 0.3]
+export var jump_times_to_descend := [0.5, 0.35, 0.25, 0.2]
 
 var speed_phase : int = 0
 var is_waiting_for_grounded := true
@@ -83,6 +83,7 @@ func die() -> void:
 		$Tux/hat.visible = false
 		$Tux/TuxAnimations.play("die")
 		owner.get_node("GUI/DeathMenu/AnimationPlayer").play("fadein")
+		owner.get_node("GUI/DeathMenu/Control/Retry").grab_focus()
 
 func get_gravity() -> float:
 	return jump_gravity if velocity.y > 0.0 else fall_gravity
