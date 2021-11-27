@@ -9,7 +9,7 @@ A simple game for the [TeamSeas Game Jam](https://itch.io/jam/seajam).
 You can play the game without downloading it [here](https://itch.io/jam/seajam/rate/1286982).
 
 ## Android
-Even though you can play the game from the browser on your phone, the downloadable version is more optimized and feels better. You can dowbload it [from itch.io](https://ilmastrostefanuzzoyt.itch.io/tux-vs-boohwaer#download) or you can grab one of the [releases](https://github.com/IlmastroStefanuzzo/tux-vs-boohwaer/releases/).
+Even though you can play the game from the browser on your phone, the downloadable version is more optimized and feels better. You can download it [from itch.io](https://ilmastrostefanuzzoyt.itch.io/tux-vs-boohwaer#download) or you can grab one of the [releases](https://github.com/IlmastroStefanuzzo/tux-vs-boohwaer/releases/).
 
 # Lore
 Oh, no! Tux was about to eat pizza, but humans keep polluting the environment. Now Tux's home is melted and he has to avoid all the plastic in the ocean!
