@@ -1,7 +1,8 @@
 extends Control
 
 func _ready() -> void:
-	$VBoxContainer/Play.grab_focus()
+	if !(OS.get_name() == "Android" || OS.get_name() == "iOS"):
+		$VBoxContainer/Play.grab_focus()
 
 func _on_Play_pressed() -> void:
 	get_tree().change_scene("res://level.tscn")

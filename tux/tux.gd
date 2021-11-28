@@ -83,7 +83,8 @@ func die() -> void:
 		$Tux/hat.visible = false
 		$Tux/TuxAnimations.play("die")
 		owner.get_node("GUI/DeathMenu/AnimationPlayer").play("fadein")
-		owner.get_node("GUI/DeathMenu/Control/Retry").grab_focus()
+		if !(OS.get_name() == "Android" || OS.get_name() == "iOS"):
+			owner.get_node("GUI/DeathMenu/Control/Retry").grab_focus()
 
 func get_gravity() -> float:
 	return jump_gravity if velocity.y > 0.0 else fall_gravity
