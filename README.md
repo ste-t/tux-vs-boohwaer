@@ -20,6 +20,10 @@ Even though you can play the game from the browser on your phone, the downloadab
 
 Oh, no! Tux was about to eat pizza, but humans keep polluting the environment. Now Tux's home is melted and he has to avoid all the plastic in the ocean!
 
+# Thanks to...
+* [ShiGo](https://ninjikin.itch.io) for his [water assets](https://ninjikin.itch.io/water)
+* The [SuperTux Andvance](https://github.com/kelvinshadewing/supertux-advance) developers for the Tux sprites.
+
 # _Pssssss_
 
 _Avoid looking at the code. It is horrible. I just neded it to work, ok?_
