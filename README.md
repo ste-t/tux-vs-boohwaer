@@ -17,6 +17,14 @@ Play Tux vs Bottle of Water without downloading it [here](https://itch.io/jam/se
 
 Even though you can play the game from the browser on your phone, the downloadable version is more optimized and feels better. You can download it [from itch.io](https://ilmastrostefanuzzoyt.itch.io/tux-vs-boohwaer#download) or you can grab one of the [releases](https://github.com/IlmastroStefanuzzo/tux-vs-boohwaer/releases/).
 
+## Linux x64
+
+You can grab a standalone executable from the [releases](https://github.com/IlmastroStefanuzzo/tux-vs-boohwaer/releases).
+
+## Windows
+
+I'll probably upload a Windows executable in a few days.
+
 # Lore
 
 Oh, no! Tux was about to eat pizza, but humans keep polluting the environment. Now Tux's home is melted and he has to avoid all the plastic in the ocean!
