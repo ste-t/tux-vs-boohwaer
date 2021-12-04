@@ -14,6 +14,10 @@ config/name="Tux vs Bo'oh'o'Wa'er"
 run/main_scene="res://menu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Globals="*res://globals.gd"
+
 [display]
 
 window/size/width=1920

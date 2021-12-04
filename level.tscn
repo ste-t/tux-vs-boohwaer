@@ -128,7 +128,6 @@ __meta__ = {
 [node name="Tux (RigidBody2D)" parent="." instance=ExtResource( 1 )]
 position = Vector2( 196.5, 753.4 )
 z_index = 5
-jump_heights = [ 260.0, 400, 430.0, 600.0 ]
 
 [node name="MovingStuff" type="Node2D" parent="."]
 script = ExtResource( 6 )
@@ -136,7 +135,7 @@ script = ExtResource( 6 )
 [node name="Objects" type="Node2D" parent="MovingStuff"]
 position = Vector2( 0, 768 )
 
-[node name="DefaultEnviorment" parent="MovingStuff" instance=ExtResource( 2 )]
+[node name="Enviorment" parent="MovingStuff" instance=ExtResource( 2 )]
 script = null
 
 [node name="Timer" type="Timer" parent="."]

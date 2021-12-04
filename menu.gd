@@ -1,7 +1,7 @@
 extends Control
 
 func _ready() -> void:
-	if !(OS.get_name() == "Android" || OS.get_name() == "iOS"):
+	if OS.get_name() != "Android" and OS.get_name() != "iOS":
 		$VBoxContainer/Play.grab_focus()
 
 func _on_Play_pressed() -> void:
